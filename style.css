@@ -4,12 +4,32 @@ body {
     box-sizing: border-box;
     background-color: aquamarine;
     color: white;
+    min-width: 100vh;
 }
 
 #start {
-    margin-top: 100px;
+    margin-top: 20px;
     background-color: darkgreen;
     border-radius: 5px;
     padding: 10px;
     color: white;
+}
+
+#canva {
+    cursor: crosshair;
+    width: 500px;
+    height: 500px;
+    background-color: azure;
+    box-shadow: 6px 6px 6px black;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+
+
+}
+
+.virus {
+    position: absolute;
+    width: var(--x);
+    height: var(--y);
 }
