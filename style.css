@@ -2,25 +2,30 @@ body {
     text-align: center;
     margin: auto;
     box-sizing: border-box;
-    background-color: aquamarine;
-    color: white;
+    background-color: black;
     min-width: 100vh;
 }
 
 #start {
+    box-shadow: 1px 1px 1px white;
     margin-top: 20px;
-    background-color: darkgreen;
-    border-radius: 5px;
-    padding: 10px;
+    background-color: #103a1f;
+    border-radius: 50%;
+    padding: 18px;
     color: white;
+    cursor: pointer;
+
+    border: 1 solid white;
+    border: none;
+    font-size: 14pt;
 }
 
 #canva {
     cursor: crosshair;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 400px;
     background-color: azure;
-    box-shadow: 6px 6px 6px black;
+    box-shadow: 6px 6px 6px #fff;
     position: relative;
     overflow: hidden;
     margin: auto;
@@ -32,4 +37,37 @@ body {
     position: absolute;
     width: var(--x);
     height: var(--y);
+    --scaler: 1;
+    animation: virusAnim 14s forwards;
+}
+
+.virus:hover {
+    --scaler: 1.2;
+}
+
+.virus:active {
+    --scaler: 1;
+}
+
+@keyframes virusAnim {
+    from {
+        transform: translate(0%, 0%) scale(var(--scaler));
+    }
+
+    to {
+        transform: translate(var(--trX), var(--trY)) scale(var(--scaler))
+    }
+}
+
+#scoreboard {
+
+    font-weight: bold;
+    font-size: 18pt;
+    color: #fff;
+    padding: 10px;
+}
+
+#score,
+#time {
+    color: brown;
 }
