@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+    margin: auto;
+    box-sizing: border-box;
+    background-color: aquamarine;
+    color: white;
+}
+
+#start {
+    margin-top: 100px;
+    background-color: darkgreen;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+}
