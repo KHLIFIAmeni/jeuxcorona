@@ -17,14 +17,14 @@ function start() {
     play ? '' : game();
     paly = true;
     function game() {
-        let timeReminder = Math.round(Math.random()) * 3000;
+        let timeReminder = Math.round(Math.random()) * 1000;
 
 
         setTimeout(() => {
-            if (count === days) {
+            if (count === 60) {
                 success();
             }
-            else if (count != days) {
+            else if (canva.childElementCount < 70) {
                 virusPop();
                 game();
             }
@@ -76,12 +76,16 @@ document.addEventListener('click', function (e) {
 })
 
 function gameOver() {
-    endScreen.innerHTML = `<div class="gameOver">Game Over votre score est 0</div>`;
+    endScreen.innerHTML = `<div class="gameOver">Game Over votre score est ${count}<br>Il vous reste ${days} jours de confinnement</div>`;
     endScreen.style.visibility = 'visible';
     play = false;
+
 }
 function success() {
-    endScreen.innerHTML = `<div class="Bravo">Bravo !!!! Super</div>`;
+    endScreen.innerHTML = `<div class="gameOver">Bravo !!!! Super votre score est ${count}</div>`;
     endScreen.style.visibility = 'visible';
     play = false;
 }
+endScreen.addEventListener('click', () => {
+    endScreen.style.visibility = 'hidden';
+})
