@@ -5,23 +5,40 @@ const endScreen = document.getElementById('endscreen');
 
 var days = 60;
 var count = 0;
+play = false;
 
 function start() {
+    count = 0;
+    days = 60;
 
     canva.innerHTML = ''
     score.innerHTML = count;
     time.innerHTML = days;
-    game()
+    play ? '' : game();
+    paly = true;
     function game() {
         let timeReminder = Math.round(Math.random()) * 3000;
 
+
         setTimeout(() => {
-            virusPop();
-            game();
+            if (count === days) {
+                success();
+            }
+            else if (count != days) {
+                virusPop();
+                game();
+            }
+            else {
+                gameOver();
+            }
         }, timeReminder)
     }
 
+
+
+
 }
+
 function virusPop() {
     let virus = new Image();
     virus.src = "./images/virus.png";
@@ -52,6 +69,19 @@ document.addEventListener('click', function (e) {
     if (targetElement.classList.contains('virus')) {
         targetElement.remove();
         count++;
+        days--;
         score.innerHTML = count;
+        time.innerHTML = days
     }
 })
+
+function gameOver() {
+    endScreen.innerHTML = `<div class="gameOver">Game Over votre score est 0</div>`;
+    endScreen.style.visibility = 'visible';
+    play = false;
+}
+function success() {
+    endScreen.innerHTML = `<div class="Bravo">Bravo !!!! Super</div>`;
+    endScreen.style.visibility = 'visible';
+    play = false;
+}

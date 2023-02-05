@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    margin: auto;
+
     box-sizing: border-box;
     background-color: black;
     min-width: 100vh;
@@ -18,6 +18,10 @@ body {
     border: 1 solid white;
     border: none;
     font-size: 14pt;
+}
+
+#start:hover {
+    padding: 25px;
 }
 
 #canva {
@@ -70,4 +74,25 @@ body {
 #score,
 #time {
     color: brown;
+}
+
+#endscreen {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    background-color: rgb(12, 12, 12);
+    z-index: 99;
+    opacity: 0.9;
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+    visibility: hidden;
+    overflow: hidden;
+
+}
+
+.gameOver {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
 }
